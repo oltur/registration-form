@@ -6,7 +6,7 @@ import { saveUserName, saveUserAge } from '../actions';
 import { withRouter } from 'react-router-dom';
 import { push } from 'react-router-redux';
 
-const Step1 = ({userName, userAge, onSaveUserName, onSaveUserAge, onHistoryPush}) => {
+export const Step1 = ({userName, userAge, onSaveUserName, onSaveUserAge, onHistoryPush}) => {
     let userNameNode;
     let userAgeNode;
 
