@@ -9,7 +9,7 @@ A boilerplate for playing around with react, redux and react-router with the hel
 
 
 
-## Run the app
+# Run the app
 
 0. ```npm install```
 0. ```npm start```
@@ -21,4 +21,6 @@ Yes, it takes a while to load the first time you open the app.
 ## Run tests
 
 ```npm test```
+
+# [See live here](http://turevski.com:3000/step1)
 
