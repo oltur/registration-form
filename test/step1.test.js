@@ -34,5 +34,5 @@ describe('Test for Step1', () => {
         wrapper.find('#userName').simulate('change', {target: {value: 'David'}});
         expect(props.onSaveUserName.calledOnce).to.equal(true);
     });
-})
+});
 
