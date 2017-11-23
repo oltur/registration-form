@@ -18,4 +18,8 @@ Once running, if you want to hide the redux dev monitor: ```CTRL+H```
 
 Yes, it takes a while to load the first time you open the app.
 
+## Run tests
+
+```npm test```
+
 ...
