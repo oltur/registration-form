@@ -22,4 +22,3 @@ Yes, it takes a while to load the first time you open the app.
 
 ```npm test```
 
-...
