@@ -55,7 +55,9 @@ const Step2 = ({userBirthday, userGender, onSaveUserBirthday, onSaveUserGender, 
             <div className={inputButton}>
                 <button onClick={onSubmit}>Submit</button>
             </div>
-            <a href="#" onClick={onBackToStep1}>Get back to Step 1</a>
+            <div className={inputButton}>
+                <a href="#" onClick={onBackToStep1}>Get back to Step 1</a>
+            </div>
         </div>
     </div>);
 };

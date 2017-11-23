@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
-import { step, inputText } from '../styles/step.scss';
+import { step, inputText, inputButton } from '../styles/step.scss';
 import { push } from 'react-router-redux';
 import { reset } from '../actions';
 import { sendData } from '../api';
@@ -48,7 +48,9 @@ const Step3 = ({userName, userAge, userBirthday, userGender, onReset, onHistoryP
         	        value={userGender}
                     />
             </div>
-            <a href="#" onClick={() => {onReset(); onHistoryPush('/step1'); return false;}}>Register another user</a>
+            <div className={inputButton}>
+                <a href="#" onClick={() => {onReset(); onHistoryPush('/step1'); return false;}}>Register another user</a>
+            </div>
         </div>
     </div>);
 };

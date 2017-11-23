@@ -1,10 +1,51 @@
 .step {
-	.inputText, .inputButton {
-		padding: 20px;
-		// background-color: red;
+	border: 1px solid;
+	background-color: whitesmoke;
+	position: absolute;
+	width: 300px;
+	height: 400px;
+	top: 50%;
+	left: 50%;
+	margin-top: -200px;
+  margin-left: -150px;
+
+	H1 {
+		text-align: center;
+	}
+
+	label {
+		display:inline-block;
+		width: 100px;
+		min-width: 100px;
+		max-width: 100px;
+		padding-right: 10px;
+	}
+
+	.inputText,
+	.inputButton {
+		padding: 10px;
+	}
+
+	.inputText {
+		min-height: 40px;
+	}
+
+	.inputButton {
+		text-align: center;
+	}
+
+	.inputButton:first-of-type {
+		padding-top: 40px;
+		text-align: center;
+	}
+
+	input {
+		vertical-align: top;
+		width: 150px;
 	}
 }
 
 input:invalid {
 	border: 1px solid red;
-  }
+}
+

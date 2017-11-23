@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { footer } from '../styles/footer.scss';
+import { root } from '../styles/main.scss';
 import Routes from '../routes';
 
 const App = () =>
-    <div>
+    <div className={root}>
         { Routes }
         <footer className={footer}>
             <Link to="/about">About</Link>
