@@ -7,12 +7,13 @@ import { reset } from '../actions';
 import { sendData } from '../api';
 
 const Step3 = ({userName, userAge, userBirthday, userGender, onReset, onHistoryPush}) => {
-    sendData({userName, userAge, userBirthday, userGender})
+    const url = 'http://echo-server.turevski.com/';
+    sendData(url, {userName, userAge, userBirthday, userGender})
     .then((data) => {
-        alert('Server response: ' + JSON.stringify(data));
+        alert(`Server response from ${url}:  ${JSON.stringify(data)}`);
     })
     .catch((error)=>{
-        alert('Server error: ' + JSON.stringify(error));
+        alert(`Server error from ${url}: ${JSON.stringify(error)}`);
     });
 
     return (

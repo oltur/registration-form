@@ -9,6 +9,25 @@ const Step2 = ({userBirthday, userGender, onSaveUserBirthday, onSaveUserGender, 
     let userBirthdayNode;
     let userGenderNode;
 
+    function isFormValid() {
+        const result = (!!userBirthdayNode && userBirthdayNode.validity.valid) && (!!userGenderNode && userGenderNode.validity.valid);
+        return result;
+    }
+
+    function onSubmit() {
+        if(isFormValid()) {
+            onHistoryPush('/step3');
+        }
+        return false;
+    }
+
+    function onBackToStep1() {
+        if(isFormValid()) {
+            onHistoryPush('/step1');
+        }
+        return false;
+    }
+
     return (
     <div className={step}>
         <h1>Step 2</h1>
@@ -22,7 +41,7 @@ const Step2 = ({userBirthday, userGender, onSaveUserBirthday, onSaveUserGender, 
                     onChange={() => onSaveUserBirthday(userBirthdayNode.value)}/>
             </div>
             <div className={inputText}>
-                <label htmlFor="userGender">Gender: </label>
+                <label htmlFor="userGender">Gender (male or female): </label>
                 <input id="userGender"
                     type="text" placeholder="Gender" required pattern="male|female"
         	        value={userGender}
@@ -34,9 +53,9 @@ const Step2 = ({userBirthday, userGender, onSaveUserBirthday, onSaveUserGender, 
                     </datalist>
             </div>
             <div className={inputButton}>
-                <button onClick={() => {onHistoryPush('/step3'); return false;}}>Submit</button>
+                <button onClick={onSubmit}>Submit</button>
             </div>
-            <a href="#" onClick={() => {onHistoryPush('/step1'); return false;}}>Get back to Step 1</a>
+            <a href="#" onClick={onBackToStep1}>Get back to Step 1</a>
         </div>
     </div>);
 };

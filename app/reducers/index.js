@@ -3,15 +3,6 @@ import { combineReducers } from 'redux';
 import * as types from '../actions/types';
 import { formatDate } from '../tools/dateFormatter';
 
-const filter = (state = '', action) => {
-    switch (action.type) {
-        case types.FILTER:
-            return action.filter;
-        default:
-            return state;
-    }
-};
-
 const userName = (state = '', action) => {
     switch (action.type) {
         case types.USER_NAME:
@@ -49,7 +40,6 @@ const userGender = (state = '', action) => {
 };
 
 const rootReducer = combineReducers({
-    filter,
     userName,
     userAge,
     userBirthday,

@@ -10,6 +10,18 @@ const Step1 = ({userName, userAge, onSaveUserName, onSaveUserAge, onHistoryPush}
     let userNameNode;
     let userAgeNode;
 
+    function isFormValid() {
+        const result = (!!userNameNode && userNameNode.validity.valid) && (!!userAgeNode && userAgeNode.validity.valid);
+        return result;
+    }
+
+    function onNext() {
+        if(isFormValid()) {
+            onHistoryPush('/step2');
+        }
+        return false;
+    }
+
     return (
     <div className={step}>
         <h1>Step 1</h1>
@@ -31,7 +43,7 @@ const Step1 = ({userName, userAge, onSaveUserName, onSaveUserAge, onHistoryPush}
                     onChange={() => onSaveUserAge(parseInt(userAgeNode.value, 10))}/>
             </div>
             <div className={inputButton}>
-                <button onClick={() => {onHistoryPush('/step2'); return false;}}>Next</button>
+                <button onClick={onNext} disabled={isFormValid()}>Next</button>
             </div>
         </div>
     </div>);
